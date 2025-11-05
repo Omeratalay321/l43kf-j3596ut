@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abim İçin Tatlı Soru</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Tüm ekran yüksekliğini kullan */
+            margin: 0;
+            background-color: #f0f8ff; /* Açık mavi arka plan */
+            text-align: center;
+            transition: background-color 0.5s; /* Renk geçişi için animasyon */
+        }
+        h1 {
+            color: #4a148c; /* Mor başlık */
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .butonlar {
+            display: flex;
+            gap: 30px; /* Butonlar arası boşluk */
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Buton Stilleri */
+        #evetBtn {
+            background-color: #4CAF50; /* Yeşil */
+            color: white;
+        }
+        #hayirBtn {
+            background-color: #f44336; /* Kırmızı */
+            color: white;
+        }
+        /* Sonuç Alanı */
+        #sonuc {
+            margin-top: 50px;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #4a148c;
+            /* Sonuç ilk başta görünmez olsun */
+            opacity: 0; 
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="soru">Abim, beni seviyor musun? ❤️</h1>
+
+    <div class="butonlar">
+        <button id="evetBtn">Evet</button>
+        <button id="hayirBtn">Hayır</button>
+    </div>
+
+    <div id="sonuc"></div>
+
+    <script>
+        document.getElementById('evetBtn').addEventListener('click', function() {
+            // "Evet"e tıklandığında
+            document.getElementById('sonuc').innerHTML = "Bende seni seviyorum abi! 🥰";
+            document.getElementById('sonuc').style.color = "#4CAF50"; // Yeşil sonuç
+            document.getElementById('sonuc').style.opacity = 1; // Sonucu göster
+            document.body.style.backgroundColor = "#ccffcc"; // Arka planı hafif yeşile çevir
+        });
+
+        document.getElementById('hayirBtn').addEventListener('click', function() {
+            // "Hayır"a tıklandığında
+            document.getElementById('sonuc').innerHTML = "Neden 'Hayır'a bastın ki! 🥺";
+            document.getElementById('sonuc').style.color = "#f44336"; // Kırmızı sonuç
+            document.getElementById('sonuc').style.opacity = 1; // Sonucu göster
+            document.body.style.backgroundColor = "#ffdddd"; // Arka planı hafif kırmızıya çevir
+        });
+    </script>
+
+</body>
+</html>
